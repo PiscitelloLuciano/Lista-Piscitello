@@ -1,0 +1,16 @@
+* {
+  font-size: 20px;
+}
+
+.aprobado {
+  background-color: rgb(110, 185, 110);
+}
+
+.desaprobado {
+  background-color: rgb(250, 124, 124);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}

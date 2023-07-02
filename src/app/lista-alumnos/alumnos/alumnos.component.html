@@ -1,0 +1,25 @@
+<p [style.margin-left]="'30px'" [style.font-weight]="'bold'">Alumno || Nota</p>
+<ul>
+  <li
+    *ngFor="let alumno of alumnos"
+    [style.margin-bottom]="'10px'"
+    [ngClass]="alumno.nota >= 7 ? 'aprobado' : 'desaprobado'"
+  >
+    {{ alumno.nombre }} || {{ alumno.nota }}
+  </li>
+</ul>
+
+<div class="flex-container">
+  <div class="box-aprobados">
+    <h2 [style.color]="'darkgreen'">Alumnos Aprobados</h2>
+    <ul *ngFor="let alumno of alumnos">
+      <li *ngIf="alumno.nota >= 7">{{ alumno.nombre | uppercase }}</li>
+    </ul>
+  </div>
+  <div class="box-desaprobados">
+    <h2 [style.color]="'red'">Alumnos Desaprobados</h2>
+    <ul *ngFor="let alumno of alumnos">
+      <li *ngIf="alumno.nota < 7">{{ alumno.nombre | uppercase }}</li>
+    </ul>
+  </div>
+</div>
